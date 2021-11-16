@@ -2,11 +2,13 @@ import React from 'react';
 import { AppBar, Button, IconButton, Toolbar, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import logo from '../../../Images/jerinsLogo.png';
+import { useHistory } from 'react-router';
 
 const Navigation = () => {
+    const history = useHistory();
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <AppBar sx={{ backgroundColor: 'rgba(0,0,0,.01)', color: '#474747' }} position="static">
+            <AppBar sx={{ boxShadow: 0, backgroundColor: 'rgba(0,0,0,.01)', color: '#474747' }} position="static">
                 <Toolbar>
                     <IconButton
                         size="large"
@@ -25,7 +27,9 @@ const Navigation = () => {
                         <Typography sx={{ minWidth: 100 }}>Our Portfolio</Typography>
                         <Typography sx={{ minWidth: 100 }}>Our Team</Typography>
                         <Typography sx={{ minWidth: 100 }}>Contact Us</Typography>
-                        <Typography sx={{ minWidth: 100 }}><Button sx={{ backgroundColor: '#F63E7B', color: '#fff' }}>Login</Button></Typography>
+                        <Typography sx={{ minWidth: 100 }}>
+                            <Button onClick={() => history.push('/login')} sx={{ backgroundColor: '#F63E7B', color: '#fff', px: 2 }} variant="contained">Login</Button>
+                        </Typography>
 
                     </Box>
                 </Toolbar>
